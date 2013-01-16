@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }} - Blog.md</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="logo">
+					<a href="{{ url_for('index') }}"><h1>Blog.md</h1></a>
+					<a href="{{ url_for('about') }}"><h1>About</h1></a>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="navbar">
+				<h3>Navigation</h3>
+				<ul>
+
+				
+				</ul>
+			</div>
+			<div class="container">
+				<div class="jumbo">
+					{{ html | safe }}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
