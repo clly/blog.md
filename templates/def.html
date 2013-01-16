@@ -18,7 +18,27 @@
 			<div class="navbar">
 				<h3>Navigation</h3>
 				<ul>
-
+				{% for item in map %}
+					{% for f in item.files %}
+					<a href="{{ url_for('article', pth=item.url, mdfile=f[0]) }}"><li class='file'>{{ f[1] }}</li></a>
+					{% endfor %}
+					{% for d in item.dirs recursive %}
+					<li class='dir'><a href="#">{{ d.base }}</a>
+							{%- if d.files -%}
+					<ul>
+							{% for f in d.files %}
+					<a href="{{ url_for('article', pth=d.url, mdfile=f[0]) }}"><li class='file'>{{ f[1] }}</li></a>
+							{% endfor %}
+					</ul>
+							{%- endif -%}
+						{%- if d.dirs -%}
+						<ul>
+						{{ loop(d.dirs) }}
+						</ul>
+						{%- endif -%}
+						{% endfor %}
+					</li>
+				{% endfor %}
 				
 				</ul>
 			</div>
