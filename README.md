@@ -7,20 +7,22 @@ A micro-blogging application written in Python using Flask
 
 There are two libraries needed to use blog.md: Flask and markdown2.  Both of them are available through pip
 
-	```
 	pip install markdown2
 	pip install Flask
-	```
 	
 When Flask is installed it will install two other libraries Jinja2 and Werkzeug.
 
 ## Using blog.md
 
+### Navigation
+
+The navigation is dynamically created from the directory tree in static/md/articles.
+
 ### Articles
 
 All the articles should be written in Markdown.  The syntax is available [here](http://daringfireball.net/projects/markdown/syntax).
 
-The top level article directory is in static/md/articles.  Any articles placed there will show up in navigation.
+The top level article directory is in static/md/articles.  Any articles placed within this directory will show up in navigation.
 
 **NOTE**: There is a current limitation where any md files placed in the top level directory won't be shown.
 
